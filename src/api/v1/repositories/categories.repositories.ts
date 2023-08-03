@@ -93,7 +93,7 @@ const updateCategoriesRepository = async (data: Categories, id: string) => {
   }
 };
 
-const deleteCategoriesRepository = async (data: Categories, id: string) => {
+const deleteCategoriesRepository = async (id: string) => {
   try {
     const doc_id = new mongoose.Types.ObjectId(id);
     let cat = await categoriesModal.findOne({

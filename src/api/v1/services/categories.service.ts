@@ -60,9 +60,9 @@ const updateCategoryService = async (data: Categories, id: string) => {
     );
   }
 };
-const deleteCategoryService = async (data: Categories, id: string) => {
+const deleteCategoryService = async (id: string) => {
   try {
-    return await deleteCategoriesRepository(data, id);
+    return await deleteCategoriesRepository(id);
   } catch (err: any) {
     try {
       err = JSON.parse(err.message);

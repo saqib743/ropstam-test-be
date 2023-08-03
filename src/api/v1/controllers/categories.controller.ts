@@ -25,9 +25,10 @@ const createCategory: RequestHandler = async (req, res, next) => {
 
 const getCategories: RequestHandler = async (req, res, next) => {
   try {
-    const user = await getAllCategoryService(req.body);
+    let categories = await getAllCategoryService(req.body);
+
     response(res, "Category Sent", 201, {
-      user,
+      categories,
     });
   } catch (err: any) {
     errorResponse(res, err);
@@ -45,7 +46,7 @@ const updateCategories: RequestHandler = async (req, res, next) => {
 };
 const deleteCategories: RequestHandler = async (req, res, next) => {
   try {
-    const user = await deleteCategoryService(req.body, req.params.id);
+    const user = await deleteCategoryService(req.params.id);
     response(res, "Category deleted", 201, {
       user,
     });
