@@ -9,6 +9,7 @@ import "./config/mongooseExecute";
 
 import userRoutes from "./api/v1/routes/users.routes";
 import categoriesRoutes from "./api/v1/routes/categories.routes";
+import carsRoutes from "./api/v1/routes/cars.routes";
 
 import http from "http";
 
@@ -44,6 +45,7 @@ app.use(express.json());
 
 app.use("/users", userRoutes);
 app.use("/categories", categoriesRoutes);
+app.use("/cars", carsRoutes);
 
 const httpServer = http.createServer(app);
 // const httpsServer = https.createServer(credentials, app);

@@ -1,10 +1,4 @@
 import {
-  createUserRepository,
-  userLogInRepository,
-} from "../repositories/users.repository";
-import mongoose from "mongoose";
-import { Users } from "../interfaces/users";
-import {
   createCategoryRepository,
   deleteCategoriesRepository,
   getAllCategoriesRepository,
