@@ -101,7 +101,7 @@ const deleteCategoriesRepository = async (id: string) => {
     });
 
     if (cat) {
-      return await categoriesModal.deleteOne(doc_id);
+      return await categoriesModal.deleteOne({ _id: doc_id });
     } else {
       throw new Error(
         '{"status":"Failed", "statusCode":500, "errorMessage":"Error occurred while updating a Cat or cat not found"}'

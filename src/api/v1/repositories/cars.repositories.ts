@@ -103,7 +103,7 @@ const deleteCarsRepository = async (id: string) => {
     });
 
     if (car) {
-      return await carsModel.deleteOne(doc_id);
+      return await carsModel.deleteOne({ _id: doc_id });
     } else {
       throw new Error(
         '{"status":"Failed", "statusCode":500, "errorMessage":"Error occurred while updating a Car or car not found"}'
