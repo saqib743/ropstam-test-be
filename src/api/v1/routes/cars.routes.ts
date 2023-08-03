@@ -6,12 +6,13 @@ import {
   getCars,
   updateCars,
 } from "../controllers/cars.controller";
+import { authentication } from "../middlewares/auth";
 
 const router = Router();
 
-router.post("/create", addCarsValidation, createCars);
-router.get("/", getCars);
-router.patch("/:id", updateCars);
-router.delete("/:id", deleteCars);
+router.post("/create", authentication(), addCarsValidation, createCars);
+router.get("/", authentication(), getCars);
+router.patch("/:id", authentication(), updateCars);
+router.delete("/:id", authentication(), deleteCars);
 
 export default router;

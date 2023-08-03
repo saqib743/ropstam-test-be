@@ -7,12 +7,13 @@ import {
   getCategories,
   updateCategories,
 } from "../controllers/categories.controller";
+import { authentication } from "../middlewares/auth";
 
 const router = Router();
 
-router.post("/create", addCategoryValidation, createCategory);
-router.get("/", getCategories);
-router.patch("/:id", updateCategories);
-router.delete("/:id", deleteCategories);
+router.post("/create", authentication(), addCategoryValidation, createCategory);
+router.get("/", authentication(), getCategories);
+router.patch("/:id", authentication(), updateCategories);
+router.delete("/:id", authentication(), deleteCategories);
 
 export default router;
