@@ -9,7 +9,7 @@ const carsSchema = new mongoose.Schema(
       unique: true,
     },
     categoryId: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
       required: [true, "category Field Is Required"],
     },
   },

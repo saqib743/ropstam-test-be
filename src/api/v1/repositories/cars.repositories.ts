@@ -39,8 +39,16 @@ const createCarsRepository = async (data: Cars) => {
 
 const getAllCarRepository = async (data: Cars) => {
   try {
-    let car = await carsModel.find();
-
+    let car = await carsModel.aggregate([
+      {
+        $lookup: {
+          from: "categories",
+          localField: "categoryId",
+          foreignField: "_id",
+          as: "category",
+        },
+      },
+    ]);
     return car;
   } catch (err: any) {
     try {
