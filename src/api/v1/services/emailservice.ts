@@ -3,7 +3,7 @@ const transporter = nodemailer.createTransport({
   service: "Gmail", // Replace with your email service provider (e.g., 'Gmail', 'Outlook')
   auth: {
     user: "saqibfurien@gmail.com", // Replace with your email address
-    pass: "qinffrfoxbroavcx", // Replace with your email password or app-specific password
+    pass: "xpmgzybkbmjzcezp", // Replace with your email password or app-specific password
   },
 });
 interface emailServiceProps {
@@ -17,6 +17,7 @@ const emailService = async ({ email, password }: emailServiceProps) => {
     subject: "Welcome to Ropstam Test",
     text: `Weclome user your password is ${password}`,
   };
+
   await transporter.sendMail(mailOptions, (error: any, info: any) => {
     if (error) {
       console.log("Error sending email:", error);
@@ -25,3 +26,4 @@ const emailService = async ({ email, password }: emailServiceProps) => {
     }
   });
 };
+export { emailService };

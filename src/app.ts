@@ -8,6 +8,7 @@ import "./config/mongooseExecute";
 // mongoose
 
 import userRoutes from "./api/v1/routes/users.routes";
+import categoriesRoutes from "./api/v1/routes/categories.routes";
 
 import http from "http";
 
@@ -42,6 +43,7 @@ app.use(express.json());
 // mongoose routes
 
 app.use("/users", userRoutes);
+app.use("/categories", categoriesRoutes);
 
 const httpServer = http.createServer(app);
 // const httpsServer = https.createServer(credentials, app);

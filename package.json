@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server",
-    "dev": "nodemon dist/bundle.js",
+    "dev": "ts-node-dev --respawn --transpile-only src/app.ts",
     "build": "webpack",
     "watch": "nodemon -e ts -w ./src -x npm run dev"
   },
@@ -49,6 +49,7 @@
     "mongoose": "^6.0.14",
     "morgan": "^1.10.0",
     "multer": "^1.4.4",
-    "nodemailer": "^6.9.4"
+    "nodemailer": "^6.9.4",
+    "ts-node-dev": "^2.0.0"
   }
 }

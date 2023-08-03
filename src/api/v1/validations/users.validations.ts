@@ -27,12 +27,12 @@ const addUserValidation: RequestHandler = async (req, res, next) => {
 
 const userLoginValidation: RequestHandler = async (req, res, next) => {
   await body("email")
-    .isLength({ min: 8, max: 15 })
+    .isLength({ min: 6, max: 30 })
     .not()
     .contains(" ")
     .run(req);
   await body("password")
-    .isLength({ min: 8, max: 15 })
+    .isLength({ min: 8, max: 30 })
     .not()
     .contains(" ")
     .run(req);

@@ -1,13 +1,13 @@
 import {
-  createUserRespository,
-  userLogInRespository,
+  createUserRepository,
+  userLogInRepository,
 } from "../repositories/users.repository";
 import mongoose from "mongoose";
 import { Users } from "../interfaces/users";
 
 const createUserService = async (data: Users) => {
   try {
-    return await createUserRespository(data);
+    return await createUserRepository(data);
   } catch (err: any) {
     try {
       err = JSON.parse(err.message);
@@ -24,7 +24,7 @@ const createUserService = async (data: Users) => {
 
 const userLogInService = async (data: { email: string; password: string }) => {
   try {
-    return await userLogInRespository(data);
+    return await userLogInRepository(data);
   } catch (err: any) {
     try {
       err = JSON.parse(err.message);
